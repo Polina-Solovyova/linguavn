@@ -1,0 +1,9 @@
+{
+    "short_name": "Visual Novels",
+    "name": "Visual Novels Reader",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1f1c33",
+    "theme_color": "#6c63ff",
+    "icons": []
+}

@@ -1,0 +1,89 @@
+{
+  "version": "1.0",
+  "meta": {
+    "title": "My First Novel",
+    "language": "en",
+    "level": "B1"
+  },
+  "assets": {
+    "characters": {
+      "ann": {
+        "name": "Ann",
+        "image": "/media/demo/ann.png"
+      }
+    },
+    "backgrounds": {
+      "park": {
+        "image": "/media/demo/park.jpg"
+      },
+      "home": {
+        "image": "/media/demo/home.jpg"
+      }
+    },
+    "music": {}
+  },
+  "start": "intro",
+  "nodes": [
+    {
+      "id": "intro",
+      "type": "say",
+      "text": "A quiet afternoon in the park.",
+      "background": "park",
+      "next": "n1"
+    },
+    {
+      "id": "n1",
+      "type": "say",
+      "text": "Hi, are you waiting for someone?",
+      "character": "ann",
+      "position": "left",
+      "background": "park",
+      "next": "pick"
+    },
+    {
+      "id": "pick",
+      "type": "choice",
+      "prompt": "What do you say?",
+      "choices": [
+        {
+          "text": "Yes, my friend.",
+          "next": "path_yes"
+        },
+        {
+          "text": "No, just resting.",
+          "next": "path_no"
+        }
+      ]
+    },
+    {
+      "id": "path_yes",
+      "type": "say",
+      "text": "Then I will leave you to it.",
+      "character": "ann",
+      "background": "park",
+      "next": "n2"
+    },
+    {
+      "id": "n2",
+      "type": "jump",
+      "next": "end"
+    },
+    {
+      "id": "path_no",
+      "type": "say",
+      "text": "May I sit here for a moment?",
+      "character": "ann",
+      "background": "home",
+      "next": "n3"
+    },
+    {
+      "id": "n3",
+      "type": "jump",
+      "next": "end"
+    },
+    {
+      "id": "end",
+      "type": "end"
+    }
+  ]
+}
